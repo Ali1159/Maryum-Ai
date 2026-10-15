@@ -1,0 +1,14 @@
+[Unit]
+Description=Maryum AI desktop assistant
+After=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Maryum-Ai
+EnvironmentFile=%h/Maryum-Ai/.env
+ExecStart=%h/Maryum-Ai/.venv/bin/python -m maryum_ai.main
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
